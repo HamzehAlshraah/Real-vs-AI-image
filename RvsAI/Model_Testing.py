@@ -5,10 +5,10 @@ import streamlit as st
 model=tf.keras.models.load_model("RvsAI/model_2.keras")
 st.sidebar.header("Real vs AI")
 st.sidebar.subheader("English")
-st.sidebar.text("Read vs AI is a deep learning web application that analyzes images to determine whether they are real or AI-generated.")
+st.sidebar.text("Read vs AI is a deep learning web application that analyzes images humen to determine whether they are real or AI-generated.")
 st.sidebar.text("Upload an image to get an instant prediction with a clear confidence score.")
 st.sidebar.subheader("العربي")
-st.sidebar.text("Read vs AI هو تطبيق ويب للتعلم العميق يقوم بتحليل الصور لتحديد ما إذا كانت حقيقية أم تم إنشاؤها بواسطة الذكاء الاصطناعي.")
+st.sidebar.text("Read vs AI هو تطبيق ويب للتعلم العميق يقوم بتحليل الصور البشر لتحديد ما إذا كانت حقيقية أم تم إنشاؤها بواسطة الذكاء الاصطناعي.")
 st.sidebar.text("قم بتحميل صورة للحصول على تنبؤ فوري مع درجة ثقة واضحة.")
 
 uploaded_file = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
@@ -41,4 +41,5 @@ if uploaded_file is not None:
         con=(1-pred)*100
 
         st.progress(int(con),text=f"{con:.0f}%")
+
 
