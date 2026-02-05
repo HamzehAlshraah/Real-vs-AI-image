@@ -2,7 +2,7 @@ import tensorflow as tf
 from PIL import Image
 import numpy as np
 import streamlit as st
-model=tf.keras.models.load_model(r"N:\RvsAI\model_2.keras")
+model=tf.keras.models.load_model("/RvsAI/model_2.keras")
 st.sidebar.header("Real vs AI")
 st.sidebar.subheader("English")
 st.sidebar.text("Read vs AI is a deep learning web application that analyzes images to determine whether they are real or AI-generated.")
@@ -39,4 +39,5 @@ if uploaded_file is not None:
     else:
         st.error("AI-Generated Image")
         con=(1-pred)*100
+
         st.progress(int(con),text=f"{con:.0f}%")
